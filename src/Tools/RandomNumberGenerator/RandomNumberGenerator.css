@@ -1,0 +1,17 @@
+.errorBox {
+border: 1px solid;
+color: red;
+padding: .5em;
+}
+
+
+.results:empty { display: none; }
+
+.results {
+    border: 1px solid darkslategrey;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: .5em;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(243, 243, 243);
+}

@@ -6,3 +6,11 @@ ul {
 ul li {
   padding: 2px;
 }
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
