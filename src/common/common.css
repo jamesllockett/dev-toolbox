@@ -1,9 +1,10 @@
-.errorBox {
+.error {
 border: 1px solid;
 color: red;
 padding: .5em;
+margin-top: .5em;
+margin-bottom: .5em;
 }
-
 
 .results:empty { display: none; }
 
@@ -14,4 +15,10 @@ padding: .5em;
     padding: .5em;
     font-family: 'Courier New', Courier, monospace;
     background-color: rgb(243, 243, 243);
+}
+
+section footer {
+  font-size: 0.9em;
+  font-style: italic;
+  color: gray;
 }
