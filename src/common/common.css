@@ -16,3 +16,9 @@ margin-bottom: .5em;
     font-family: 'Courier New', Courier, monospace;
     background-color: rgb(243, 243, 243);
 }
+
+section footer {
+  font-size: 0.9em;
+  font-style: italic;
+  color: gray;
+}

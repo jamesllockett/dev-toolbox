@@ -29,6 +29,7 @@ return(
       <h2>General</h2>
       <ul>
         <li><Link to="/random-number-generator">Random Number Generator</Link></li>
+        <li><Link to="/guid-generator">GUID Generator</Link></li>
       </ul>
     </section>
   </nav>);
