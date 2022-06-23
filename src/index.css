@@ -33,7 +33,7 @@ code {
     monospace;
 }
 
-#root {
+.app-wrapper {
   padding: .5em;
   max-width: 1024px;
   margin-left: auto;

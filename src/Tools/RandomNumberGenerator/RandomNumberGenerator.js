@@ -1,5 +1,7 @@
 import { ToolComponent } from "../ToolComponent";
-import './RandomNumberGenerator.css';
+import { SimpleError } from "../../common/SimpleErrorComponent";
+import { Random } from "../../common/random";
+import { SimpleResultList  } from "../../common/SimpleResultListComponent";
 
 class RandomNumberGenerator extends ToolComponent {
 
@@ -20,18 +22,6 @@ class RandomNumberGenerator extends ToolComponent {
   }
 
   render() {
-    const results = this.state.results.map((v) =>
-    {
-      return (
-      <li>{v}</li>
-      );
-    });
-
-    let errorBox;
-    if (this.state.error.length > 0) {
-      errorBox = (<p className="errorBox">{this.state.error}</p>);
-    }
-
     return(
       <section>
         <h2>Random Number Generator</h2>
@@ -52,17 +42,14 @@ class RandomNumberGenerator extends ToolComponent {
         </ul>
 
         <button onClick={() => this.generateNumbers()}>Generate</button>
-        {errorBox}
-        <ul className="results">
-          {results}
-        </ul>
-        
+        <SimpleError error={this.state.error} />
+        <SimpleResultList results={this.state.results} />
       </section>
     );
 }
 
-  generateNumbers(){
-    
+  generateNumbers() {
+
     if(this.state.min >= this.state.max ){
       this.setError("Minimum number must be less than the maximum");
     } else if(this.state.count < 1) {
@@ -79,20 +66,22 @@ class RandomNumberGenerator extends ToolComponent {
     }
   }
 
-  onMinChange(event){
+  onMinChange(event) {
     this.updateState({min: event.target.value});
   }
 
-  onMaxChange(event){
+  onMaxChange(event) {
     this.updateState({max: event.target.value});
   }
 
-  onCountChange(event){
+  onCountChange(event) {
     this.updateState({count: event.target.value});
   }
 
   generateNumber(min, max) {
-    return Math.round(min + (Math.random() * (max - min)));
+    const r = new Random();
+
+    return Math.round(r.generateInBounds(min, max));
   }
 
   setError(error){

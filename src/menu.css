@@ -14,3 +14,13 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+nav section{
+  width: 50%;
+}

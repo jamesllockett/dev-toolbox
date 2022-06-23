@@ -1,9 +1,10 @@
-.errorBox {
+.error {
 border: 1px solid;
 color: red;
 padding: .5em;
+margin-top: .5em;
+margin-bottom: .5em;
 }
-
 
 .results:empty { display: none; }
 

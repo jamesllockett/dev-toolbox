@@ -1,4 +1,6 @@
 import { ToolComponent } from "../ToolComponent";
+import { SimpleError } from "../../common/SimpleErrorComponent";
+import { SimpleResultList  } from "../../common/SimpleResultListComponent";
 
 class RandomStringGenerator extends ToolComponent
 {
@@ -6,7 +8,7 @@ class RandomStringGenerator extends ToolComponent
         super(props);
 
         this.state = {
-            chars:'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_!"£$%^&*()-',
+            chars: 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_!£$%^&*()-',
             stringLength: 50,
             stringCount: 1,
             results:[],
@@ -19,12 +21,6 @@ class RandomStringGenerator extends ToolComponent
     }
 
     render() {
-        let results = this.state.results.map((v) => {
-            return (<li>{v}</li>);
-        });
-
-        let errorBox;
-
         return (
             <section>
                 <h2>Random String Generator</h2>
@@ -45,11 +41,8 @@ class RandomStringGenerator extends ToolComponent
                 </ul>
 
                 <button onClick={() => this.generateStrings()}>Generate</button>
-                {errorBox}
-                <ul className="results">
-                {results}
-                </ul>
-                
+                <SimpleError error={this.state.error} />
+                <SimpleResultList results={this.state.results} />
             </section>
         );
     }

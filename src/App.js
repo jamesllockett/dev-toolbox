@@ -9,7 +9,7 @@ class App extends Component
  render()
  {
      return (
-         <div>
+         <div className="app-wrapper">
             <header><h1><strong>dev</strong>toolbox</h1></header>
             <Routes>
                 <Route exact path="/" element={<Menu/>}/>
