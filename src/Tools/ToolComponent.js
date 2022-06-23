@@ -2,6 +2,7 @@ import { Component } from "react";
 
 export class ToolComponent extends Component{
 
+    render() { return(<div></div>); }
     
     updateState(updatedState){
         this.setState(Object.assign({}, this.state, updatedState));
