@@ -1,4 +1,3 @@
-import { Component } from 'react';
 import { v4 } from 'uuid';
 import { SimpleError } from "../../common/SimpleErrorComponent";
 import { SimpleResultList  } from "../../common/SimpleResultListComponent";
@@ -40,7 +39,7 @@ export class GuidGenerator extends ToolComponent{
           <SimpleResultList results={this.state.results} />
 
           <footer>
-            <p>Powered by <a href="https://www.npmjs.com/package/uuid" target="_blank">UUID</a></p>
+            <p>Powered by <a href="https://www.npmjs.com/package/uuid" target="_blank" rel="noreferrer">UUID</a></p>
           </footer>
       </section>
     );
