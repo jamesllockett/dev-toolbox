@@ -1,9 +1,9 @@
-import './common.css';
+import "./common.css";
 
 export function SimpleError(props) {
-  if (!props.error || props.error === ''){
-    return (null);
+  if (!props.error || props.error === "") {
+    return null;
   }
 
-  return(<div className="error">{props.error}</div>);
+  return <div className="error">{props.error}</div>;
 }

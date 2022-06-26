@@ -1,24 +1,87 @@
 .error {
-border: 1px solid;
-color: red;
-padding: .5em;
-margin-top: .5em;
-margin-bottom: .5em;
+  border: 1px solid;
+  color: red;
+  padding: 0.5em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 
-.results:empty { display: none; }
+.copyable-results {
+  display: flex;
+  flex-direction: row;
+}
+
+.results:empty {
+  display: none;
+}
+
+.results:empty ~ .copy-column {
+  display: none;
+}
+
+.copy-column {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 0.8em;
+}
 
 .results {
-    border: 1px solid darkslategrey;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    padding: .5em;
-    font-family: 'Courier New', Courier, monospace;
-    background-color: rgb(243, 243, 243);
+  flex: 1 0;
+  border: 1px solid #eaeaea;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 0.8em;
+  font-family: "Courier New", Courier, monospace;
+  background-color: #f7f7f7;
+}
+
+.results li span {
+  visibility: hidden;
+  padding-left: 0.5em;
+  vertical-align: middle;
+}
+
+.results li:hover span {
+  visibility: visible;
+}
+
+.copy-button {
+  cursor: pointer;
+  color: #afafaf;
+  margin: 0;
+  padding: 0;
 }
 
 section footer {
   font-size: 0.9em;
   font-style: italic;
   color: gray;
+}
+
+label,
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+  font-size: 1rem;
+  padding: 6px 8px;
+}
+
+input[type="number"] {
+  width: 5em;
+}
+
+select {
+  min-width: 5em;
+}
+
+input[type="submit"],
+input[type="button"],
+button {
+  font-size: 1rem;
+}
+
+textarea {
+  min-width: 44em;
+  min-height: 3em;
 }

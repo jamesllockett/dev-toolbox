@@ -3,7 +3,7 @@ export class Random {
     return Math.random();
   }
 
-  generateInBounds(min, max){
-     return (min + (Math.random() * (max - min)));
+  generateInBounds(min, max) {
+    return min + Math.random() * (max - min);
   }
 }
