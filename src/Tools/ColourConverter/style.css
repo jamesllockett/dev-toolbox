@@ -1,0 +1,74 @@
+div,
+label,
+input {
+  box-sizing: border-box;
+}
+
+.colour-row {
+  height: 3em;
+}
+
+.colour-row label {
+  vertical-align: middle;
+}
+
+.colour-row input,
+.colour-block {
+  vertical-align: middle;
+  display: inline-block;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.colour-row input,
+.colour-block {
+  border: 1px solid #afafaf;
+}
+
+.colour-row input {
+  width: 200px;
+  padding: 6px;
+}
+
+.colour-block {
+  width: 80px;
+  border-left: 0;
+}
+
+.output {
+  border: 1px solid darkslategrey;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 0.5em;
+  background-color: rgb(243, 243, 243);
+}
+
+dl {
+  padding: 0;
+  margin: 0;
+  overflow: auto;
+}
+
+dl dt {
+  display: inline-block;
+  width: 4em;
+  font-weight: bold;
+  padding: 0.5em;
+  float: left;
+  clear: left;
+}
+
+dl dd {
+  flex: 1;
+  padding: 0.5em;
+  float: left;
+}
+
+dl dd img {
+  visibility: hidden;
+}
+
+dl dd:hover img {
+  visibility: visible;
+}
