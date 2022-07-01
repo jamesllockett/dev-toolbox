@@ -2,7 +2,7 @@ import { ToolComponent } from "../ToolComponent";
 import { SimpleError } from "../../common/SimpleErrorComponent";
 import { SimpleResultList  } from "../../common/SimpleResultListComponent";
 
-class RandomStringGenerator extends ToolComponent
+export class RandomStringGenerator extends ToolComponent
 {
     constructor(props){
         super(props);
@@ -95,5 +95,3 @@ class RandomStringGenerator extends ToolComponent
         this.setState(Object.assign({}, this.state, {error: err}));
     }
 }
-
-export default RandomStringGenerator;

@@ -3,7 +3,7 @@ import { SimpleError } from "../../common/SimpleErrorComponent";
 import { Random } from "../../common/random";
 import { SimpleResultList  } from "../../common/SimpleResultListComponent";
 
-class RandomNumberGenerator extends ToolComponent {
+export class RandomNumberGenerator extends ToolComponent {
 
   constructor(props){
     super(props);
@@ -88,5 +88,3 @@ class RandomNumberGenerator extends ToolComponent {
     this.setState(Object.assign({}, this.state, {error: error, results: []}));
   }
 }
-
-export default RandomNumberGenerator;

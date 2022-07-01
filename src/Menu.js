@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import './menu.css';
 
-const Menu = () => {
-return(
+export  function Menu() {
+ return(
   <nav>
     <section>
       <h2>String Tools</h2>
@@ -17,12 +17,13 @@ return(
      <ul>
        <li>HASH</li>
        <li>HMAC</li>
+       <li>Password Generator</li>
      </ul>
     </section>
     <section>
       <h2>Graphical</h2>
       <ul>
-      <li>RGB/HEX Colour convertor</li>
+      <li><Link to="/colour-converter">RGB/HEX Colour convertor</Link></li>
       </ul>
     </section>
     <section>
@@ -34,5 +35,3 @@ return(
     </section>
   </nav>);
 };
-
-export default Menu;
