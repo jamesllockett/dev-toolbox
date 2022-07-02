@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Link } from "react-router-dom";
 import { Menu } from "./Menu.js";
 import { RandomNumberGenerator } from "./Tools/RandomNumberGenerator/RandomNumberGeneratorComponent.js";
 import { RandomStringGenerator } from "./Tools/RandomStringGenerator/RandomStringGeneratorComponent.js";
