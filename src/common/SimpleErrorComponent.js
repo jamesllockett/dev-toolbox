@@ -5,5 +5,5 @@ export function SimpleError(props) {
     return null;
   }
 
-  return <div className="error">{props.error}</div>;
+  return <div className="error" role="alert">{props.error}</div>;
 }
