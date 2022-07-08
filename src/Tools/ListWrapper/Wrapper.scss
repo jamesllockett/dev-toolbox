@@ -1,0 +1,36 @@
+@import "../../common/_colour";
+
+.main {
+  display: flex;
+  flex-direction: row;
+  column-gap: 1em;
+  min-height: 25em;
+}
+.input-box {
+  flex-basis: 50%;
+  border: 1px solid $result-border-colour;
+}
+
+.output-box {
+  font-family: "Courier New", Courier, monospace;
+  flex-basis: 50%;
+  border: 1px solid $result-border-colour;
+  background-color: $result-bg-colour;
+  padding: 1.2em 0.8em;
+}
+
+.output-box ul {
+  margin: 0;
+  overflow-y: auto;
+}
+
+.input-box textarea {
+  font-family: "Courier New", Courier, monospace;
+  box-sizing: border-box;
+  width: calc(100% - 1em);
+  height: calc(100% - 1em);
+  border: 0;
+  padding: 0.8em;
+  margin: 0.5em;
+  resize: none;
+}

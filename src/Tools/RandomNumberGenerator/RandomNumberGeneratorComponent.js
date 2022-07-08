@@ -1,11 +1,10 @@
 import { ToolComponent } from "../ToolComponent";
 import { SimpleError } from "../../common/SimpleErrorComponent";
 import { Random } from "../../common/random";
-import { SimpleResultList  } from "../../common/SimpleResultListComponent";
+import { SimpleResultList } from "../../common/SimpleResultListComponent";
 
 export class RandomNumberGenerator extends ToolComponent {
-
-  constructor(props){
+  constructor(props) {
     super(props);
 
     this.state = {
@@ -13,8 +12,8 @@ export class RandomNumberGenerator extends ToolComponent {
       max: 100,
       count: 1,
       results: [],
-      error: ''
-    }
+      error: "",
+    };
 
     this.onMinChange = this.onMinChange.bind(this);
     this.onMaxChange = this.onMaxChange.bind(this);
@@ -22,22 +21,41 @@ export class RandomNumberGenerator extends ToolComponent {
   }
 
   render() {
-    return(
+    return (
       <section>
         <h2>Random Number Generator</h2>
 
         <ul>
           <li>
-            <label>Minimum Value</label>
-            <input type="number" min="0" step="1" value={this.state.min} onChange={this.onMinChange}/>
+            <label>Minimum value</label>
+            <input
+              type="number"
+              min="0"
+              step="1"
+              value={this.state.min}
+              onChange={this.onMinChange}
+            />
           </li>
           <li>
-            <label>Maximum Value</label>
-            <input type="number" min="1" step="1" value={this.state.max} onChange={this.onMaxChange}/>
+            <label>Maximum value</label>
+            <input
+              type="number"
+              min="1"
+              step="1"
+              value={this.state.max}
+              onChange={this.onMaxChange}
+            />
           </li>
           <li>
-            <label>Random Numbers to generate</label>
-            <input type="number" min="1" max="50" step="1" value={this.state.count} onChange={this.onCountChange}/>
+            <label>Random numbers to generate</label>
+            <input
+              type="number"
+              min="1"
+              max="50"
+              step="1"
+              value={this.state.count}
+              onChange={this.onCountChange}
+            />
           </li>
         </ul>
 
@@ -46,36 +64,34 @@ export class RandomNumberGenerator extends ToolComponent {
         <SimpleResultList results={this.state.results} />
       </section>
     );
-}
+  }
 
   generateNumbers() {
-
-    if(this.state.min >= this.state.max ){
+    if (this.state.min >= this.state.max) {
       this.setError("Minimum number must be less than the maximum");
-    } else if(this.state.count < 1) {
+    } else if (this.state.count < 1) {
       this.setError("Amount of numbers to generate must be at least 1");
-    }
-    else {
+    } else {
       let numbers = [];
 
-      for(var i = 0; i< this.state.count; i++){
+      for (var i = 0; i < this.state.count; i++) {
         numbers.push(this.generateNumber(this.state.min, this.state.max));
       }
 
-      this.updateState({results:numbers});
+      this.updateState({ results: numbers });
     }
   }
 
   onMinChange(event) {
-    this.updateState({min: event.target.value});
+    this.updateState({ min: event.target.value });
   }
 
   onMaxChange(event) {
-    this.updateState({max: event.target.value});
+    this.updateState({ max: event.target.value });
   }
 
   onCountChange(event) {
-    this.updateState({count: event.target.value});
+    this.updateState({ count: event.target.value });
   }
 
   generateNumber(min, max) {
@@ -84,7 +100,7 @@ export class RandomNumberGenerator extends ToolComponent {
     return Math.round(r.generateInBounds(min, max));
   }
 
-  setError(error){
-    this.setState(Object.assign({}, this.state, {error: error, results: []}));
+  setError(error) {
+    this.setState(Object.assign({}, this.state, { error: error, results: [] }));
   }
 }

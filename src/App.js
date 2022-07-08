@@ -5,6 +5,7 @@ import { RandomNumberGenerator } from "./Tools/RandomNumberGenerator/RandomNumbe
 import { RandomStringGenerator } from "./Tools/RandomStringGenerator/RandomStringGeneratorComponent.js";
 import { GuidGenerator } from "./Tools/GuidGenerator/GuidGeneratorComponent.js";
 import { ColourConverter } from "./Tools/ColourConverter/ColourConverterComponent.js";
+import { ListWrapper } from "./Tools/ListWrapper/ListWrapperComponent.js";
 
 export class App extends Component {
   render() {
@@ -33,6 +34,7 @@ export class App extends Component {
           <Route path="/color-converter" element={<ColourConverter />} />
           <Route path="/color-convertor" element={<ColourConverter />} />
           <Route path="/colour-convertor" element={<ColourConverter />} />
+          <Route path="/list-wrapper" element={<ListWrapper />} />
         </Routes>
       </div>
     );
