@@ -8,9 +8,9 @@ export class ListWrapper extends ToolComponent {
     super(props);
 
     this.state = {
-      suffix: "",
-      prefix: "",
-      list: ["a", "b", "c"],
+      suffix: "',",
+      prefix: "'",
+      list: [],
     };
 
     this.onPrefixChanged = this.onPrefixChanged.bind(this);
