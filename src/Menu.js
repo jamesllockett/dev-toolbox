@@ -1,7 +1,16 @@
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
+import { ToolGroup } from "./ToolGroupComponent";
 import "./menu.css";
+import { DevTools } from "./Links.js";
 
 export function Menu() {
+  let sections = DevTools.groups.map((g) => (
+    <ToolGroup name={g.name} tools={g.tools} key={g.name} />
+  ));
+
+  return <nav>{sections}</nav>;
+
+  /*
   return (
     <nav>
       <section>
@@ -45,4 +54,5 @@ export function Menu() {
       </section>
     </nav>
   );
+  */
 }

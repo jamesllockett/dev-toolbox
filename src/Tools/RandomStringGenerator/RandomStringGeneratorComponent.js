@@ -30,6 +30,7 @@ export class RandomStringGenerator extends ToolComponent {
           <li>
             <label>Characters</label>
             <textarea
+              id="randomstringgeneratorcharstextarea"
               value={this.state.chars}
               onChange={this.onCharsChange}
             ></textarea>
